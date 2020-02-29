@@ -27,3 +27,35 @@
 
 --------------------------------------------------- Training Losses -------------------------------------------
 ![Training Losses](https://github.com/raghavendra-gunnai/EVA4/blob/master/session6/TrainingLosses.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------- Validation Losses -------------------------------------------
+![Validation Loss](https://github.com/raghavendra-gunnai/EVA4/blob/master/session6/ValidationLosses.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------- Validation Accuracy -------------------------------------------
+![validation accuracy](https://github.com/raghavendra-gunnai/EVA4/blob/master/session6/ValidationAccuracy.png)
