@@ -11,7 +11,7 @@ class Trainer:
     self.test_losses = []
     self.test_acc = []
 
-  def train(self, model, device, train_loader, optimizer):
+  def train(self, model, device, train_loader, optimizer, loss_fun=None):
     model.train()
     pbar = tqdm(train_loader)
     correct = 0
@@ -23,8 +23,10 @@ class Trainer:
       y_pred = model(data)
 
       # Calculate loss
-      criteria = nn.CrossEntropyLoss()
-      loss = criteria(y_pred, target)
+      if loss_fun is None:
+        loss = F.nll_loss(y_pred, target)
+      else:
+        loss = loss_fun(y_pred, target)
       self.train_losses.append(loss)
 
       # Backpropagation
@@ -46,7 +48,7 @@ class Trainer:
       for data, target in test_loader:
         data, target = data.to(device), target.to(device)
         output = model(data)
-        test_loss += F.nll_loss(output, target, reduction='sum').item()  # sum up batch loss
+        test_loss += F.nll_loss(output, target, reduction='sum').item() #test_loss += (pred != target).sum().item()
         pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
         correct += pred.eq(target.view_as(pred)).sum().item()
 
