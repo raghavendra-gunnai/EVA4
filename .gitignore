@@ -1,3 +1,13 @@
 nimcache/
 nimblecache/
 htmldocs/
+.idea
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+/**/data/**/*.json
+/**/data/**/*.txt
+/**/data/**/*.zip
+.DS_Store
+.idea/
